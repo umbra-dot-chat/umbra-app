@@ -9,10 +9,10 @@ const config = getDefaultConfig(__dirname);
 
 config.watchFolders = [
   ...(config.watchFolders || []),
-  path.resolve(__dirname, 'packages/umbra-wasm'),
-  path.resolve(__dirname, 'packages/umbra-service'),
-  path.resolve(__dirname, 'packages/umbra-plugin-sdk'),
-  path.resolve(__dirname, 'packages/umbra-plugin-runtime'),
+  path.resolve(__dirname, '../umbra-wasm'),
+  path.resolve(__dirname, '../umbra-service'),
+  path.resolve(__dirname, '../umbra-plugin-sdk'),
+  path.resolve(__dirname, '../umbra-plugin-runtime'),
   path.resolve(__dirname, 'modules/expo-umbra-core'),
 ];
 
@@ -109,7 +109,7 @@ config.resolver.resolveRequest = (context, moduleName, platform) => {
 
   // Resolve @umbra/wasm to local package
   if (moduleName === '@umbra/wasm') {
-    const filePath = path.resolve(__dirname, 'packages/umbra-wasm/index.ts');
+    const filePath = path.resolve(__dirname, '../umbra-wasm/index.ts');
     if (fs.existsSync(filePath)) {
       return { type: 'sourceFile', filePath };
     }
@@ -117,7 +117,7 @@ config.resolver.resolveRequest = (context, moduleName, platform) => {
 
   // Resolve @umbra/service to local package
   if (moduleName === '@umbra/service') {
-    const filePath = path.resolve(__dirname, 'packages/umbra-service/src/index.ts');
+    const filePath = path.resolve(__dirname, '../umbra-service/src/index.ts');
     if (fs.existsSync(filePath)) {
       return { type: 'sourceFile', filePath };
     }
@@ -125,7 +125,7 @@ config.resolver.resolveRequest = (context, moduleName, platform) => {
 
   // Resolve @umbra/plugin-sdk to local package
   if (moduleName === '@umbra/plugin-sdk') {
-    const filePath = path.resolve(__dirname, 'packages/umbra-plugin-sdk/src/index.ts');
+    const filePath = path.resolve(__dirname, '../umbra-plugin-sdk/src/index.ts');
     if (fs.existsSync(filePath)) {
       return { type: 'sourceFile', filePath };
     }
@@ -133,7 +133,7 @@ config.resolver.resolveRequest = (context, moduleName, platform) => {
 
   // Resolve @umbra/plugin-runtime to local package
   if (moduleName === '@umbra/plugin-runtime') {
-    const filePath = path.resolve(__dirname, 'packages/umbra-plugin-runtime/src/index.ts');
+    const filePath = path.resolve(__dirname, '../umbra-plugin-runtime/src/index.ts');
     if (fs.existsSync(filePath)) {
       return { type: 'sourceFile', filePath };
     }

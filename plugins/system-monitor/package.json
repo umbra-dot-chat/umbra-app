@@ -11,7 +11,7 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@umbra/plugin-sdk": "file:../../packages/umbra-plugin-sdk"
+    "@umbra/plugin-sdk": "file:../../../umbra-plugin-sdk"
   },
   "peerDependencies": {
     "react": ">=18.0.0"
